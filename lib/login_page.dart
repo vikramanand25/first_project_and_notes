@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp678/main.dart';
 import 'package:flutterapp678/utils/Constants.dart';
 import 'package:http/http.dart' as http;
 
@@ -8,7 +9,16 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+final _formKey = GlobalKey<FormState> ();
 
+void validate() {
+  if (_formKey.currentState.validate()) {
+    print("Ok");
+  }
+  else {
+    print("error");
+  }
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,17 +47,37 @@ class _LoginPageState extends State<LoginPage> {
                     child: Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Form(
+                        key: _formKey,
                         child: Column(
                           children: [
                             TextFormField(
+                              validator: (value){
+                                if  (value.isEmpty){
+                                  return "fill the form";
+                                }
+                                else if(value.length <= 2){
+                                  return "Enter Minimum 3 characters";
+                                }
+                                return null;
+                              },
                               decoration: InputDecoration(
-                                hintText: "Enter Your Number",
-                                  labelText: "Number",
+                                hintText: "Enter Your Emaol",
+                                  labelText: "Email",
                                 border: OutlineInputBorder(),
                               ),
                             ),
                             SizedBox(height: 20,),
                             TextFormField(
+                              validator: (value){
+                                if (value.isEmpty){
+                                  return "Enter a Valid Password";
+                                }
+                                else if (value.length <=2){
+                                  return "Password will be atleast 3 digit";
+                                }
+                                else
+                                return null;
+                              },
                               decoration: InputDecoration(
                                 hintText: "Enter Passoword",
                                 labelText: "Password",
@@ -55,10 +85,11 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                             ),
                             SizedBox(height:20),
-                            RaisedButton(onPressed: (){
-                              Constants.prefs.setBool("loggedIn", true);
-                              Navigator.pushReplacementNamed(context, "/HomePage");
-                            },
+                            RaisedButton(onPressed: validate,
+                            //       (){
+                            //   Constants.prefs.setBool("isNewUser", false);
+                            //   Navigator.push(context, MaterialPageRoute(builder: (context)=> FirstPage()));
+                            // },
                               child: Text("Sign Up"),
 
                             )

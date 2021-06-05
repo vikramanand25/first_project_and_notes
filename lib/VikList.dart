@@ -9,8 +9,11 @@ class _VikListState extends State<VikList> {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: CircleAvatar(),
-      title: Text("Vikram"),
+      leading: CircleAvatar(
+        backgroundImage: AssetImage("assets/abhi.jpeg"),
+        //radius: 75,
+      ),
+      title: Text("Abhishek Kumar"),
       subtitle: Text("This is My First Message"),
       trailing: Icon(Icons.edit_attributes),
       onTap: (){

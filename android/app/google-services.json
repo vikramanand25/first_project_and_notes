@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "815022832964",
+    "project_id": "vikramproject-71de6",
+    "storage_bucket": "vikramproject-71de6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:815022832964:android:10aa8524b7490c7bbeeb11",
+        "android_client_info": {
+          "package_name": "com.example.flutterapp678"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "815022832964-j0gosceccc9odmvammtbo61q54kn28tp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDI9642pIDV75yOH1fr5Wy_f9ahn27QauQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "815022832964-j0gosceccc9odmvammtbo61q54kn28tp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
