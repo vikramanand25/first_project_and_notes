@@ -93,6 +93,20 @@
             </list>
           </value>
         </entry>
+        <entry key="dependencies">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/dependencies-0.1.5/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="disposables">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/disposables-0.1.2/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="fake_async">
           <value>
             <list>
@@ -111,6 +125,27 @@
           <value>
             <list>
               <option value="$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.1/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="firebase_auth">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-1.3.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="firebase_auth_platform_interface">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_platform_interface-4.2.4/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="firebase_auth_web">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_web-1.2.0/lib" />
             </list>
           </value>
         </entry>
@@ -275,6 +310,13 @@
             </list>
           </value>
         </entry>
+        <entry key="quiver">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-2.1.5/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="shared_preferences">
           <value>
             <list>
@@ -431,9 +473,14 @@
       <root url="file://$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.15.0/lib" />
       <root url="file://$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-0.1.3/lib" />
       <root url="file://$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/curved_navigation_bar-0.3.7/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/dependencies-0.1.5/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/disposables-0.1.2/lib" />
       <root url="file://$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/ffi-1.1.2/lib" />
       <root url="file://$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.1/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-1.3.0/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_platform_interface-4.2.4/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_web-1.2.0/lib" />
       <root url="file://$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-1.2.1/lib" />
       <root url="file://$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-4.0.1/lib" />
       <root url="file://$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-1.1.0/lib" />
@@ -454,6 +501,7 @@
       <root url="file://$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/platform-3.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/process-4.2.1/lib" />
+      <root url="file://$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-2.1.5/lib" />
       <root url="file://$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-2.0.6/lib" />
       <root url="file://$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_linux-2.0.0/lib" />
       <root url="file://$PROJECT_DIR$/../../../../Src/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_macos-2.0.0/lib" />

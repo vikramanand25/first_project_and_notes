@@ -39,8 +39,18 @@ class FirstPage extends StatefulWidget {
 }
 
 class _FirstPageState extends State<FirstPage> {
+  Map<String, dynamic> userMap;
+  TextEditingController searchController = TextEditingController();
   final db = FirebaseFirestore.instance;
+  bool isLoading = false;
 
+  void searchBox() async{
+    FirebaseFirestore _firebase = FirebaseFirestore.instance;
+    await _firebase.collection('users').where("email", isEqualTo: searchController.text)
+    .get().then((value){
+      userMap.addAll( value.docs[0].data());
+    });
+   }
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -84,12 +94,46 @@ class _FirstPageState extends State<FirstPage> {
         ),
         body: TabBarView(
           children: [
-            StreamBuilder<QuerySnapshot>(
-              stream: db.collection('users').snapshots(),
-              builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-                print(snapshot.data.docs[0].toString());
-                return Text("Gopi");
-              }
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                children: [
+                  SizedBox(height: 20,),
+                  TextField(
+                    controller: searchController,
+                    decoration: InputDecoration(
+                      hintText: "Search",hintStyle: TextStyle(color: Colors.grey, fontSize: 20,letterSpacing: 1,fontWeight: FontWeight.bold),
+                      border: OutlineInputBorder(
+                      )
+                    ),
+                  ),
+                  SizedBox(height: 20,),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 100),
+                      child: GestureDetector(
+
+                        onTap: (){
+                          searchBox(){
+                            setState(() {
+                              isLoading = true;
+                            });
+                          }
+                        },
+                        child: Container(
+                          alignment: Alignment.center,
+                          height: 40,
+                          color: Colors.blue,
+                          child: Text("Search"),
+                        ),
+                      ),
+                    ),
+                  SizedBox(height: 20,),
+                  userMap != null ? ListTile(
+                    title: Text(userMap['name']),
+                    subtitle: Text(userMap['email'])
+                  ): Container(),
+                ],
+              ),
             ),
             Text("Gopi"),
             Text("Gopi"),

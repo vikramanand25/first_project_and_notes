@@ -1,112 +1,99 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp678/main.dart';
-import 'package:flutterapp678/utils/Constants.dart';
-import 'package:http/http.dart' as http;
+import 'package:flutterapp678/services/auth.dart';
 
+import 'SignUpPage.dart';
+import 'main.dart';
 class LoginPage extends StatefulWidget {
+  const LoginPage({Key key}) : super(key: key);
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
-final _formKey = GlobalKey<FormState> ();
-
-void validate() {
-  if (_formKey.currentState.validate()) {
-    print("Ok NEW UPDATED");
-  }
-  else {
-    print("error");
-  }
-}
+  final TextEditingController  emailController = TextEditingController();
+  final TextEditingController  passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    height:MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Login Page"),
+        title: Text("Welcome"),
+        centerTitle: true,
       ),
-      body: Stack(
-        fit: StackFit.expand,
+      body: Column(
         children: [
-          Image.network("https://picsum.photos/200",fit: BoxFit.cover,),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Column(
+          SizedBox(height: 20,),
+          Text("Sign In To Continue", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22, color: Colors.grey), ),
+          SizedBox(height: 40,),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Form(
+              child: Column(
                 children: [
-                   Text("We Understand Your Privacy", style: TextStyle(fontWeight: FontWeight.bold),),
-                  Text(" we never share your Data with other's"),
-                ],
-              ),
-              SizedBox(height: 20,),
-              Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(30.0),
-                  child: Card(
-                    elevation:4,
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Form(
-                        key: _formKey,
-                        child: Column(
-                          children: [
-                            TextFormField(
-                              validator: (value){
-                                if  (value.isEmpty){
-                                  return "fill the form";
-                                }
-                                else if(value.length <= 2){
-                                  return "Enter Minimum 3 characters";
-                                }
-                                return null;
-                              },
-                              decoration: InputDecoration(
-                                hintText: "Enter Your Emaol",
-                                  labelText: "Email",
-                                border: OutlineInputBorder(),
-                              ),
-                            ),
-                            SizedBox(height: 20,),
-                            TextFormField(
-                              validator: (value){
-                                if (value.isEmpty){
-                                  return "Enter a Valid Password";
-                                }
-                                else if (value.length <=2){
-                                  return "Password will be atleast 3 digit";
-                                }
-                                else
-                                return null;
-                              },
-                              decoration: InputDecoration(
-                                hintText: "Enter Passoword",
-                                labelText: "Password",
-                                border: OutlineInputBorder(),
-                              ),
-                            ),
-                            SizedBox(height:20),
-                            RaisedButton(onPressed: validate,
-                            //       (){
-                            //   Constants.prefs.setBool("isNewUser", false);
-                            //   Navigator.push(context, MaterialPageRoute(builder: (context)=> FirstPage()));
-                            // },
-                              child: Text("Sign Up"),
-
-                            )
-                          ],
-                        ),
+                  TextFormField(
+                    controller: emailController,
+                    decoration: InputDecoration(
+                      labelText:"Email",
+                      hintText: "Enter Your Email",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10)
                       ),
                     ),
                   ),
+                  SizedBox( height: 20,),
+                  TextFormField(
+                    controller: passwordController,
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      labelText:"Password",
+                      hintText: "Enter Your Password",
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                  SizedBox( height: 20,)
+                ],
+              ),
+
+            ),
+          ),
+            Padding(
+              padding:  EdgeInsets.symmetric(horizontal: 30),
+              child: GestureDetector(
+                onTap: (){
+                  if(emailController.text.isEmpty || passwordController.text.isEmpty){
+                    print("Fill the required field");
+                    return ("Something went Wrong");
+                  }
+                  else{
+                    LoggedIn(emailController.text, passwordController.text).then((user){
+                      if(user != null){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> FirstPage()));
+                      }
+                      else{
+                        print("could Not found Data");
+                      }
+                    });
+                  }
+                },
+                child: Container(
+                  alignment: Alignment.center,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                  ),
+                    child: Text("Login",style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
                 ),
               ),
-            ],
-          ),
+            ),
+            SizedBox(height: 20,),
+          GestureDetector(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (cpmtext)=> SignUp_Page()));
+            },
+              child: Text("Create Account", style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),))
         ],
       ),
-
-
     );
   }
 }
-//sale waiting me dalke torture krta hain
